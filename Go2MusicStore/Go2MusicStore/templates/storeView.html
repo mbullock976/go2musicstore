@@ -1,0 +1,105 @@
+﻿
+<div id="storeView">
+
+    <div class="row">
+
+        <ul id="sideBarList" class="col-md-1">
+            <li ui-sref-active="selected" data-ng-repeat="i in albumService.genreList">
+                <!--<a href="#/GenresApi/{{i.genreId}}">{{i.name}}</a>-->
+                <a ui-sref="genre({genreId: i.genreId})">{{ i.name}}</a>
+            </li>
+        </ul>
+        <div class="row col-md-8">            
+            <div id="storeMainView">
+                    <!--<h2>{{jumbotronService.getValue()}}</h2>-->
+                    <div class="jumbotron"   ng-show="jumbotronService.getValue()">
+                    </div>
+                    <div ui-view=""></div>
+                
+            </div>
+        </div>
+        </div>
+        <div>
+            <div>
+                <h5 style="color: #9B9993; font-family: Constantia, Georgia, serif;">Latest Albums Released</h5>
+                <ul id="albumsList">
+                    <li data-ng-repeat="i in albumService.latestAlbumsList">
+                        <table>
+                            <tr>
+                                <th>
+                                    <img alt="/Content/Images/placeholder.gif" src={{i.albumArtUrl}} />
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <a ui-sref="album({albumId: i.albumId})">{{i.title}}</a>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a ui-sref="artist({artistId: i.artist.artistId})">{{ i.artist.name}}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!--<a href="#/GenresApi/{{i.artist.genre.genreId}}">{{i.artist.genre.name}}</a>-->
+                                    <a ui-sref="genre({genreId: i.artist.genre.genreId})">{{i.artist.genre.name}}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {{i.price | currency:"£"}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">Rating: {{i.totalStarRating}}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" class="btn btn-primary btn-xs" value="Add to cart"
+                                           data-ng-click="addToBasket(i)" />       
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a ui-sref="checkout({storeAccountId: storeAccount.storeAccountId, albumId: i.albumId})" class="btn btn-success btn-xs" style="color: white">Buy Now</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                </ul>
+                <label>{{i.lastSavedDateTime}}</label>
+                <label>Basket</label>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Welcome</h2>
+                <p>
+                    I hope you enjoy my Music Store.
+                </p>
+                <p>
+                    <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Store Account &raquo;</a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>Check out the latest music released</h2>
+                <p>We have great selection to choose from</p>
+                <p>
+                    <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>Web Hosting</h2>
+                <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+                <p>
+                    <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a>
+                </p>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,54 @@
+﻿<div class="row">
+    <form name="newReviewForm" novalidate data-ng-submit="save()">
+        <fieldset>
+            <legend>Add Review:</legend>
+
+            <label class="control-label" for="title">Title:</label>
+            <br />
+            <input class="form-control" type="text" id="title" name="title" placeholder="enter title here"
+                   data-ng-model="newReviewModel.title" size="100"
+                   required data-ng-minlength="5">
+            <span class="error" data-ng-show="newReviewForm.title.$error.required">*</span>
+            <span class="error" data-ng-show="newReviewForm.title.$error.minlength">Minimum 5 characters</span>
+            <br />
+
+            <label class="control-label" for="comment">Comment:</label><br />
+            <textarea class="form-control" type="text" id="comment" name="comment" placeholder="add comment here"
+                      cols="150" rows="3"
+                      data-ng-model="newReviewModel.comment"
+                      data-ng-maxlength="150"
+                      required data-ng-minlength="5"></textarea>
+            <span class="error" data-ng-show="newReviewForm.comment.$error.required">*</span>
+            <span class="error" data-ng-show="newReviewForm.comment.$error.minlength">Minimum 5 characters</span>
+            <span class="error" data-ng-show="newReviewForm.comment.$error.maxlength">Maximum 150 characters</span>
+            
+            <br />
+            <label class="control-label" for="rating">Rating:</label>
+            <select id="rating" name="rating" data-ng-model="newReviewModel.starRating" convert-to-number class="dropdown form-control" required>
+                <option value="">Choose</option>>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+            <span class="error" data-ng-show="newReviewForm.rating.$error.required">*</span>
+            
+            <br>
+
+            <label class="control-label" for="recommended">Recommended:</label>
+            <input class="control-label" id="recommended" type="checkbox"
+                   data-ng-model="newReviewModel.isRecommended">
+            <br>
+            <br>
+
+            <input type="submit" class="btn btn-primary" value="Submit" data-ng-disabled="newTopicForm.$invalid">
+
+            <input type="reset" class="btn btn-danger">
+
+            <a ui-sref="album({albumId: albumId})" class="btn btn-primary" style="color: white">Cancel</a>
+            <br />
+            <br />
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Go2MusicStore.Models.Review>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Reviews</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Select Album: @Html.DropDownList("SelectedAlbum", "All")
+        <input type="submit" value="Filter" />
+    </p>
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Album.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StarRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsRecommended)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReviewDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Album.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StarRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsRecommended)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReviewDate)
+        </td>
+        <td>
+            @Html.ActionLink("Album", "Index", "Albums", new { SelectedArtist = item.Album.ArtistId}, null) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.ReviewId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ReviewId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ReviewId })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("Back to Admin", "Index", "Admin")
+</div>

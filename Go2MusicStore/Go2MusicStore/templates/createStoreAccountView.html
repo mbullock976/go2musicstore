@@ -1,0 +1,111 @@
+﻿<div>
+    <h2>Create Store Account</h2>
+    <br/>
+    <p>
+        To begin purchasing from the store, you must create a store account.
+        Please enter the following details to create your Store Account.
+    </p>
+    <br />
+    <form class="form-horizontal" name="createStoreAccountForm" novalidate data-ng-submit="save()">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="userIdentityName">Registered User:</label>
+            <div class="col-sm-10">
+                <label class="control-label col-sm-2" id="userIdentityName">{{userIdentityName}}</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="firstName">First name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required
+                       data-ng-model="newStoreAccountModel.firstName">                
+                <span class="error" data-ng-show="createStoreAccountForm.firstName.$error.required">*</span>
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="lastName">Last name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="lastName" placeholder="Enter last name" 
+                        data-ng-model="newStoreAccountModel.lastName" required>
+                <span class="error" data-ng-show="createStoreAccountForm.lastName.$error.required">*</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="telephoneNo">Telephone No:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="telephoneNo" placeholder="Enter telephone number" required
+                       data-ng-model="newStoreAccountModel.telephoneNo">
+                <span class="error" data-ng-show="createStoreAccountForm.telephoneNo.$error.required">*</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="address">Address:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="address" placeholder="Enter address" required
+                       data-ng-model="newStoreAccountModel.address">
+                <span class="error" data-ng-show="createStoreAccountForm.address.$error.required">*</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="city">City:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="city" placeholder="Enter city" required
+                       data-ng-model="newStoreAccountModel.city">
+                <span class="error" data-ng-show="createStoreAccountForm.city.$error.required">*</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="postCode">Post Code:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="postCode" placeholder="Enter post code" required
+                       data-ng-model="newStoreAccountModel.postCode">
+                <span class="error" data-ng-show="createStoreAccountForm.postCode.$error.required">*</span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="country">Country:</label>
+                <div class="col-sm-10">
+                    <select id="country" name="country" class="form-control dropdown" data-ng-model="newStoreAccountModel.countryId">
+                        <option value="{{i.countryId}}"
+                                required data-ng-repeat="i in storeAccountService.countries">
+                            {{i.name}}
+                        </option>
+                    </select>
+                    <span class="error" data-ng-show="createStoreAccountForm.country.$error.required">*</span>
+                </div>
+            </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="emailAddress">Email Address:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="emailAddress" placeholder="Enter email address" required
+                       data-ng-model="newStoreAccountModel.emailAddress">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="confirmEmailAddress">Confirm Email Address:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="confirmEmailAddress" placeholder="Confirm email address" required
+                       data-ng-model="confirmEmailAddress">
+            </div>
+        </div>
+
+        <!--<div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
+                </div>
+            </div>
+        </div>-->
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary"  data-ng-disabled="createStoreAccountForm.$invalid">Create</button>
+                <input type="reset" class="btn btn-danger">
+                <a ui-sref="home" class="btn btn-primary" style="color: white">Cancel</a>
+            </div>
+        </div>
+    </form>
+    
+   
+</div>

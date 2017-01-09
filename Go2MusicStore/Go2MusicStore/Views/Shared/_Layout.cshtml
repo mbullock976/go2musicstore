@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="@ViewBag.InitModule">
+<head>
+    <base href="/" />
+    
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")" type="text/javascript"></script>
+    </head>
+<body>
+
+<div id="header">
+    <h1><a href="/">Go-2 Music Store</a></h1>
+    @*@Html.ActionLink("Music Store", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+    <ul id="navlist">
+        @*<li>@Html.ActionLink("Log in", "Login", "Account")</li>*@
+        <li><a id="storeAccountNavbarItem" ui-sref="storeAccount" class="btn btn-primary btn-s">My Store Account &raquo;</a></li>
+        <li><a style="background-color: orange;color: white" class="btn btn-s" ui-sref="shoppingCart({userIdentityName: '@ViewBag.UserIdentityName'})">Basket (@ViewBag.BasketCount)</a></li>
+
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+        <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
+        @*<li><a id="storeAccountNavbarItem" data-ng-href="#/storeAccountView" class="btn btn-primary btn-s">My Store Account &raquo;</a></li>*@
+        <li>@Html.Partial("_LoginPartial")</li>
+    </ul>            
+    
+</div>        
+<p></p>
+    <div id="main">
+        @RenderBody()
+    </div>
+
+    <div id="footer">
+        built with <a href="http://asp.net/mvc">ASP.NET MVC 4</a>
+    </div>
+
+    <!-- Angular JS -->
+    <script src="~/Scripts/angular.js"></script>    
+    <script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/AngularUI/ui-router.js"></script>
+    
+    <!-- SignalR-->
+    <script src="~/Scripts/jquery.signalR-2.2.1.min.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    ViewBag.InitModule = "storeModule";
+}
+
+@section Scripts{
+
+    <script src="~/Scripts/jquery.signalR-2.2.1.min.js"></script>
+
+    <!-- my angular scripts go here -->
+    <script src="~/javascripts/module/storeAngularModule.js"></script>
+    
+    <script src="~/javascripts/config/configs.js"></script>
+    
+    <script src="~/javascripts/services/fileReaderService.js"></script>
+
+    <script src="~/javascripts/services/signalRService.js"></script>
+
+    <script src="~/javascripts/services/albumService.js"></script>
+    
+    <script src="~/javascripts/services/jumbotronService.js"></script>
+    
+    <script src="~/javascripts/services/authenticationService.js"></script>
+
+    <script src="~/javascripts/services/storeAccountService.js"></script>
+
+    <script src="~/javascripts/controllers/uploadController.js"></script>
+
+    <script src="~/javascripts/controllers/storeController.js"></script>
+    
+    <script src="~/javascripts/controllers/storeGenreController.js"></script>
+
+    <script src="~/javascripts/controllers/storeArtistController.js"></script>
+
+    <script src="~/javascripts/controllers/storeAlbumController.js"></script>
+
+    <script src="~/javascripts/controllers/storeAlbumAddReviewController.js"></script>
+
+    <script src="~/javascripts/controllers/storeAccountController.js"></script>
+    
+    <script src="~/javascripts/controllers/storeAccountCreateController.js"></script>
+
+    <script src="~/javascripts/controllers/storeAccountCreditCardsController.js"></script>
+
+    <script src="~/javascripts/controllers/storeAccountShoppingCartsController.js"></script>
+
+    <script src="~/javascripts/controllers/storeAccountCheckoutController.js"></script>
+
+    <script src="~/javascripts/controllers/storeAccountPurchasedOrdersController.js"></script>
+}
+
+<div ui-view=""></div>
+
+
+

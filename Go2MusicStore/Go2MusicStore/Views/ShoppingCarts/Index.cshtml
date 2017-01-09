@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Go2MusicStore.Models.ShoppingCart>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Shopping Cart</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StoreAccountId)
+        </th>
+        <th>
+            Registered User
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShoppingCartId)
+        </th>
+        <th>
+            <label>No. of Shopping Cart Items</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StoreAccountId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StoreAccount.UserIdentityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShoppingCartId)
+        </td>
+        <td>
+            
+                <label>@item.ShoppingCartItems.Count</label> 
+        
+    </td>
+        <td>
+            @Html.ActionLink("Store Account", "Index", "StoreAccounts", new { SelectedStoreAccount = item.StoreAccountId }, null) |
+            @Html.ActionLink("Shopping Cart Items", "Index", "ShoppingCartItems", new { SelectedShoppingCart = item.ShoppingCartId }, null) |
+            @Html.ActionLink("Details", "Details", new { id = item.ShoppingCartId })           
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("Back to Admin", "Index", "Admin")
+</div>

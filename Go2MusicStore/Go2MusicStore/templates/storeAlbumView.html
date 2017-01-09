@@ -1,0 +1,53 @@
+﻿<div>
+    <div class="row">
+        <br/>
+    </div>
+    <div class="row col-md-3">
+        <img alt="/Content/Images/placeholder.gif" src={{album.albumArtUrl}} />
+        <h4 class="col-md-offset-1">£{{album.price}}</h4>
+        <h4 class="col-md-offset-1" style="padding: 5px; width: 50%;background-color: red; color: white" data-ng-show="isOutOfStock">Out of Stock</h4>
+        <h4 class="col-md-offset-1"  style="padding: 5px; width: 50%;background-color: black; color: white" data-ng-hide="isOutOfStock">Qty: {{album.stockCount}}</h4>
+        <div class="row col-md-offset-1">
+            <!--<input type="submit" class="btn btn-success" value="Buy Now"/>-->
+            <a ui-sref="checkout({storeAccountId: storeAccount.storeAccountId, albumId: album.albumId})" class="btn btn-success">Buy Now</a>
+        </div>
+        <br />
+        <div class="row col-md-offset-1">
+            <input type="submit" class="btn btn-success" value="Add to cart" 
+                   data-ng-click="addToBasket()"/>            
+            <br/>
+            <br />
+            <a ui-sref="shoppingCart({userIdentityName: storeAccount.userIdentityName})">Basket >></a>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <label style="float: right; color: red">{{lastSavedDateTime}}</label>
+        <h1>{{album.title}}</h1>
+        <h4><a ui-sref="artist({artistId: album.artistId})">{{album.artist.name}}</a></h4>
+        <h5>Total Star Rating: {{album.totalStarRating}}</h5>
+        <h5>{{album.description}}</h5>
+    </div>
+
+    <div class="row">
+        <a class="btn btn-primary" ui-sref="upload({albumId: album.albumId})">Upload Cover Image</a>
+        <a class="btn btn-primary" ui-sref="albumAddReview({albumId: album.albumId})">Add Review</a>
+        <br/>
+        <br/>
+    </div>
+    <div ui-view=""></div>
+    
+    <div class="reviews row">
+        <fieldset>
+            <legend>User Reviews:</legend>
+        </fieldset>
+        <ul>
+            <li data-ng-repeat="i in album.reviews | orderBy: '-reviewDate'" style="display: inline">
+                <strong>{{i.title}}</strong>
+                <h5>{{i.comment}}</h5>
+                <h6>Submitted: {{i.reviewDate | date:"MM/dd/yyyy HH:mm:ss" }}</h6>
+                <h6>User rating: {{i.starRating}}</h6>                
+            </li>
+        </ul>
+    </div>
+
+</div>

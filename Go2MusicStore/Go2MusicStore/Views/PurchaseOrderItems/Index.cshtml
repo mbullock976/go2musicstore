@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Go2MusicStore.Models.PurchaseOrderItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Purchase Order Items</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Album.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchaseOrder.PurchaseOrderId)
+        </th>
+        <th>
+            Registered User
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalAmount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Album.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PurchaseOrder.PurchaseOrderId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PurchaseOrder.StoreAccount.UserIdentityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalAmount)
+        </td>
+        <td>
+            @Html.ActionLink("Purchase Order", "Index", "PurchaseOrders", new { SelectedStoreAccount = item.PurchaseOrder.StoreAccountId }, null) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.PurchaseOrderItemId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PurchaseOrderItemId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PurchaseOrderItemId })
+        </td>
+    </tr>
+}
+
+</table>

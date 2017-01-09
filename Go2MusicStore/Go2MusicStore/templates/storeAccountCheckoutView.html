@@ -1,0 +1,62 @@
+﻿<div>
+    <h2>Checkout</h2>
+
+    <div>
+        <legend>Delivery Address:</legend>
+        <label id="firstName">{{storeAccount.firstName}}</label><br />
+        <label id="lastName">{{storeAccount.lastName}}</label><br />
+        <label id="address">{{storeAccount.address}}</label><br />
+        <label id="postCode">{{storeAccount.postCode}}</label><br />
+        <label id="city">{{storeAccount.city}}</label><br />
+        <label id="country">{{storeAccount.country.name}}</label><br />
+    </div>
+    <br />
+    <div>
+        <legend>Albums</legend>
+        <div>
+            <ul id="checkoutList">
+                <li data-ng-repeat="i in purchaseOrderItems">
+                    <table>
+                        <tr>
+                            <th>
+                                <img alt="/Content/Images/placeholder.gif" src={{i.album.albumArtUrl}} />
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <a ui-sref="album({albumId: i.albumId})">{{i.album.title}}</a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a ui-sref="artist({artistId: i.artist.artistId})">{{ i.album.artist.name}}</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a ui-sref="genre({genreId: i.artist.genre.genreId})">{{i.album.artist.genre.name}}</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{i.quantity}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{i.totalAmount = i.quantity * i.album.price | currency:"£"}}
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <label>Grand Total: {{ getTotal() | currency:"£"}}</label><br />
+    <input type="button" class="btn btn-success" value="Checkout" data-ng-click="save()" />
+    <a style="color: white" ui-sref="home" class="btn btn-danger">Cancel</a>
+    <div>
+
+    </div>
+
+</div>    

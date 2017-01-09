@@ -1,0 +1,20 @@
+﻿<div>
+    <h2>Purchased Orders</h2>
+    <a class="col-sm-4" ui-sref="storeAccount({userIdentityName: storeAccount.userIdentityName})"><< Back to Store Account</a>
+    <br/>
+    <br />
+    <div>
+        <ul>
+            <li data-ng-repeat="i in purchasedOrdersList" style="display: inline">
+                <div class="form-group"  style="border: 1px solid; padding: 10px; background-color: aliceblue">
+                    <label class="control-label">Order Id:</label>
+                    <label class="control-label">{{i.purchaseOrderId}}</label><br />
+                    <label class="control-label">Date:</label>
+                    <label class="control-label">{{i.purchaseDate}}</label><br />
+                    <label class="control-label">Total:</label>
+                    <label class="control-label">{{i.totalOrderAmount | currency:"£" }}</label>
+                </div>                
+            </li>            
+        </ul>
+    </div>    
+</div>

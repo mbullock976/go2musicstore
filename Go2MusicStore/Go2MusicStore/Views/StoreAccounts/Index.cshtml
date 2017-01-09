@@ -1,0 +1,116 @@
+﻿@model IEnumerable<Go2MusicStore.Models.StoreAccount>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Store Accounts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StoreAccountId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserIdentityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelephoneNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostCode)
+        </th>
+        <th>
+            Country
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.ShoppingCartId)*@
+            <label>Shopping Cart Created:</label>
+        </th>
+
+        <th>
+            <label>No. of Credit Cards</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StoreAccountId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserIdentityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelephoneNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAddress)
+        </td>
+        <td>
+            @if (item.ShoppingCartId > 0)
+            {
+                <label>Yes</label>
+            }
+            else
+            {
+                <Label>No</Label>
+            }
+        </td>
+        <td>
+            <label>@item.CreditCards.Count</label> 
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.StoreAccountId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.StoreAccountId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.StoreAccountId })
+
+            
+            @Html.ActionLink("ShoppingCart", "Index", "ShoppingCarts", new { SelectedStoreAccount = item.StoreAccountId }, null) |
+            @Html.ActionLink("Credit Cards", "Index", "CreditCards", new { SelectedStoreAccount = item.StoreAccountId, SelectedUserIdentityName = item.UserIdentityName }, null) |
+            @Html.ActionLink("Purchase Orders", "Index", "PurchaseOrders", new { SelectedStoreAccount = item.StoreAccountId }, null) |
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("Back to Admin", "Index", "Admin")
+</div>

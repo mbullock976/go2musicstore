@@ -1,0 +1,110 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Go2MusicStore", "Go2MusicStore\Go2MusicStore.csproj", "{94D7E905-AA2B-4CFA-A8F2-9114695F32CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Go2MusicStore.Tests", "Go2MusicStore.Tests\Go2MusicStore.Tests.csproj", "{51ECF940-DACB-4D9F-96DC-47645ACF8194}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Go2MusicStore.API", "Go2MusicStoreAPI\Go2MusicStore.API.csproj", "{0AF23E11-9BE8-4D28-A72E-4B69F828E901}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Go2MusicStore.API.Tests", "Go2MusicStoreAPI.Tests\Go2MusicStore.API.Tests.csproj", "{6DFE2430-CF0C-495B-90B2-A12C5B5922C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Go2MusicStore.Platform", "Go2MusicStore.Platform\Go2MusicStore.Platform.csproj", "{296A4940-5365-4291-AE37-D55B570591A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Go2MusicStore.Platform.DependencyResolver", "Go2MusicStore.DependencyResolver\Go2MusicStore.Platform.DependencyResolver.csproj", "{3ECFCB7E-ECA6-45EC-91B2-F69D5D5E3515}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Go2MusicStore.Platform.DependencyResolver.Modules", "Go2MusicStore.Platform.DependencyResolver.Modules\Go2MusicStore.Platform.DependencyResolver.Modules.csproj", "{FDF036A5-2C12-4C9D-A778-35F1F1C7DCC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Important", ".Important", "{22BAD8C2-7EB1-4A10-9EF8-A127C864CB4F}"
+	ProjectSection(SolutionItems) = preProject
+		.Important\Important Notes.txt = .Important\Important Notes.txt
+		..\Go2MusicStoreRES\My_AlbumStore_ER_Diagram.pdf = ..\Go2MusicStoreRES\My_AlbumStore_ER_Diagram.pdf
+		..\Go2MusicStoreRES\My_AlbumStore_ER_Diagram.xml = ..\Go2MusicStoreRES\My_AlbumStore_ER_Diagram.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Go2MusicStore.Models", "Go2MusicStore.Models\Go2MusicStore.Models.csproj", "{56622B02-F665-4793-9FAD-B01ACC67A21D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Go2MusicStore.Common", "Go2MusicStore.Common\Go2MusicStore.Common.csproj", "{209B9DA6-87B4-441A-9549-E9335E63F3B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94D7E905-AA2B-4CFA-A8F2-9114695F32CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94D7E905-AA2B-4CFA-A8F2-9114695F32CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94D7E905-AA2B-4CFA-A8F2-9114695F32CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94D7E905-AA2B-4CFA-A8F2-9114695F32CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51ECF940-DACB-4D9F-96DC-47645ACF8194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51ECF940-DACB-4D9F-96DC-47645ACF8194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51ECF940-DACB-4D9F-96DC-47645ACF8194}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51ECF940-DACB-4D9F-96DC-47645ACF8194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AF23E11-9BE8-4D28-A72E-4B69F828E901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AF23E11-9BE8-4D28-A72E-4B69F828E901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AF23E11-9BE8-4D28-A72E-4B69F828E901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AF23E11-9BE8-4D28-A72E-4B69F828E901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DFE2430-CF0C-495B-90B2-A12C5B5922C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DFE2430-CF0C-495B-90B2-A12C5B5922C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DFE2430-CF0C-495B-90B2-A12C5B5922C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DFE2430-CF0C-495B-90B2-A12C5B5922C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{296A4940-5365-4291-AE37-D55B570591A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296A4940-5365-4291-AE37-D55B570591A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296A4940-5365-4291-AE37-D55B570591A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296A4940-5365-4291-AE37-D55B570591A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ECFCB7E-ECA6-45EC-91B2-F69D5D5E3515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ECFCB7E-ECA6-45EC-91B2-F69D5D5E3515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ECFCB7E-ECA6-45EC-91B2-F69D5D5E3515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ECFCB7E-ECA6-45EC-91B2-F69D5D5E3515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDF036A5-2C12-4C9D-A778-35F1F1C7DCC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDF036A5-2C12-4C9D-A778-35F1F1C7DCC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDF036A5-2C12-4C9D-A778-35F1F1C7DCC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDF036A5-2C12-4C9D-A778-35F1F1C7DCC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56622B02-F665-4793-9FAD-B01ACC67A21D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56622B02-F665-4793-9FAD-B01ACC67A21D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56622B02-F665-4793-9FAD-B01ACC67A21D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56622B02-F665-4793-9FAD-B01ACC67A21D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{209B9DA6-87B4-441A-9549-E9335E63F3B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{209B9DA6-87B4-441A-9549-E9335E63F3B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{209B9DA6-87B4-441A-9549-E9335E63F3B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{209B9DA6-87B4-441A-9549-E9335E63F3B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://isimplifysolutionsltd.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Go2MusicStore.DependencyResolver\\Go2MusicStore.Platform.DependencyResolver.csproj
+		SccProjectName1 = Go2MusicStore.DependencyResolver
+		SccLocalPath1 = Go2MusicStore.DependencyResolver
+		SccProjectUniqueName2 = Go2MusicStore.Platform.DependencyResolver.Modules\\Go2MusicStore.Platform.DependencyResolver.Modules.csproj
+		SccProjectName2 = Go2MusicStore.Platform.DependencyResolver.Modules
+		SccLocalPath2 = Go2MusicStore.Platform.DependencyResolver.Modules
+		SccProjectUniqueName3 = Go2MusicStore.Platform\\Go2MusicStore.Platform.csproj
+		SccProjectName3 = Go2MusicStore.Platform
+		SccLocalPath3 = Go2MusicStore.Platform
+		SccProjectUniqueName4 = Go2MusicStore.Tests\\Go2MusicStore.Tests.csproj
+		SccProjectName4 = Go2MusicStore.Tests
+		SccLocalPath4 = Go2MusicStore.Tests
+		SccProjectUniqueName5 = Go2MusicStore\\Go2MusicStore.csproj
+		SccProjectName5 = Go2MusicStore
+		SccLocalPath5 = Go2MusicStore
+		SccProjectUniqueName6 = Go2MusicStoreAPI.Tests\\Go2MusicStore.API.Tests.csproj
+		SccProjectName6 = Go2MusicStoreAPI.Tests
+		SccLocalPath6 = Go2MusicStoreAPI.Tests
+		SccProjectUniqueName7 = Go2MusicStoreAPI\\Go2MusicStore.API.csproj
+		SccProjectName7 = Go2MusicStoreAPI
+		SccLocalPath7 = Go2MusicStoreAPI
+		SccProjectUniqueName8 = Go2MusicStore.Models\\Go2MusicStore.Models.csproj
+		SccProjectName8 = Go2MusicStore.Models
+		SccLocalPath8 = Go2MusicStore.Models
+		SccProjectUniqueName9 = Go2MusicStore.Common\\Go2MusicStore.Common.csproj
+		SccProjectName9 = Go2MusicStore.Common
+		SccLocalPath9 = Go2MusicStore.Common
+	EndGlobalSection
+EndGlobal

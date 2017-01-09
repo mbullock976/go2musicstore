@@ -1,0 +1,8 @@
+ER diagram via htto://draw.io
+
+NInject used for IOC container Dependency Injection for platform proj
+NInject.MVC used to the web proj
+DependencyResolver used to resolve platform objects into Web proj
+
+Link below: Ninject Multi-Tier app pattern used here (refer to PublicDependencyResolver.cs)
+https://www.jamietech.com/2015/11/19/using-ninject-mvc-in-a-n-tier-application

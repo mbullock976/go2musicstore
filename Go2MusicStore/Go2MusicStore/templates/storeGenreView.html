@@ -1,0 +1,70 @@
+﻿<div>
+    <a href="#/">Back to store</a>    
+    <br /> 
+    <br /> 
+    <div>
+        <label for="sortOrder">Sort by:</label>
+        <select id="sortOrder" name="orderby" class="dropdown" data-ng-model="selectedSortOrder">
+            <option value="{{i.sortType}}"
+                    required data-ng-repeat="i in sortOrderTypes">
+                {{i.displayName}}
+            </option>
+        </select>
+    </div>
+    <h2>{{selectedGenre.name}}</h2>
+    <h5>{{selectedGenre.description}}</h5>
+    <br/>    
+    <div>
+        <div>
+            <!--<h5 style="color: #9B9993; font-family: Constantia, Georgia, serif;">Latest Albums Released</h5>-->
+            <ul id="albumsList">
+                <li data-ng-repeat="i in albumService.genreAlbumsList | orderBy: selectedSortOrder">
+                    <table>
+                        <tr>
+                            <th>
+                                <img alt="/Content/Images/placeholder.gif" src={{i.albumArtUrl}} />
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <a ui-sref="album({albumId: i.albumId})">{{i.title}}</a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>                                
+                                <a ui-sref="artist({artistId: i.artist.artistId})">{{ i.artist.name}}</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#/GenresApi/{{i.artist.genre.genreId}}">{{i.artist.genre.name}}</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{i.price | currency:"£"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#">Rating: {{i.totalStarRating}}</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" class="btn btn-primary btn-xs" value="Add to cart"
+                                       data-ng-click="addToBasket(i)" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a ui-sref="checkout({storeAccountId: storeAccount.storeAccountId, albumId: i.albumId})" class="btn btn-success btn-xs" style="color: white">Buy Now</a>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

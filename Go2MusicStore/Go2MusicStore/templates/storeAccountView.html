@@ -1,0 +1,115 @@
+﻿<div>
+    <p><a data-ng-href="#/storeView" >&laquo; Back to Home</a></p>
+    <h1>{{title}}</h1>
+   <p class="lead"></p>
+
+    <form class="form-horizontal" name="storeAccountForm" novalidate data-ng-submit="update()">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="userIdentityName">Registered User:</label>
+            <div class="col-sm-10">
+                <label class="control-label col-sm-2" id="userIdentityName">{{storeAccount.userIdentityName}}</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="firstName">First name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required
+                       data-ng-model="storeAccount.firstName">
+                <span class="error" data-ng-show="storeAccountForm.firstName.$error.required">*</span>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="lastName">Last name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="lastName" placeholder="Enter last name"
+                       data-ng-model="storeAccount.lastName" required>
+                <span class="error" data-ng-show="storeAccountForm.lastName.$error.required">*</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="telephoneNo">Telephone No:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="telephoneNo" placeholder="Enter telephone number" required
+                       data-ng-model="storeAccount.telephoneNo">
+                <span class="error" data-ng-show="storeAccountForm.telephoneNo.$error.required">*</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="address">Address:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="address" placeholder="Enter address" required
+                       data-ng-model="storeAccount.address">
+                <span class="error" data-ng-show="storeAccountForm.address.$error.required">*</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="city">City:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="city" placeholder="Enter city" required
+                       data-ng-model="storeAccount.city">
+                <span class="error" data-ng-show="storeAccountForm.city.$error.required">*</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="postCode">Post Code:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="postCode" placeholder="Enter post code" required
+                       data-ng-model="storeAccount.postCode">
+                <span class="error" data-ng-show="storeAccountForm.postCode.$error.required">*</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="country">Country:</label>
+            <div class="col-sm-10">
+                <select id="country" name="country" 
+                        data-ng-options="i.countryId as i.name for i in storeAccountService.countries" class="form-control dropdown" data-ng-model="storeAccount.countryId" >
+                    <option value="" required >                        
+                    </option>
+                </select>
+                <span class="error" data-ng-show="storeAccountForm.country.$error.required">*</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="emailAddress">Email Address:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="emailAddress" placeholder="Enter email address" required
+                       data-ng-model="storeAccount.emailAddress">
+                <span class="error" data-ng-show="storeAccountForm.emailAddress.$error.required">*</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="confirmEmailAddress">Confirm Email Address:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="confirmEmailAddress" placeholder="Confirm email address" required
+                       data-ng-model="confirmEmailAddress">
+                <span class="error" data-ng-show="storeAccountForm.confirmEmailAddress.$error.required">*</span>
+            </div>
+        </div>
+
+        <!--<div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
+                </div>
+            </div>
+        </div>-->
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary" data-ng-disabled="storeAccountForm.$invalid">Update</button>
+                <a ui-sref="home" class="btn btn-danger" style="color: white">Cancel</a>
+                <label>{{lastSavedDateTime}}</label>
+            </div>
+        </div>
+    </form>
+
+    <div>
+        <p><a ui-sref="creditCards({userIdentityName: storeAccount.userIdentityName})">Manage Credit Cards >></a></p>
+        <p><a ui-sref="shoppingCart({userIdentityName: storeAccount.userIdentityName})">Shopping Basket >></a></p>
+        <p><a ui-sref="purchasedOrders({storeAccountId: storeAccount.storeAccountId})">Purchased Orders >></a></p>
+    </div>
+
+</div>
+

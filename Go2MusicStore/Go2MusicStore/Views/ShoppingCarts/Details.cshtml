@@ -1,0 +1,42 @@
+﻿@model Go2MusicStore.Models.ShoppingCart
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ShoppingCart</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StoreAccountId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StoreAccountId)
+        </dd>
+        <dt>
+            Registered User
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StoreAccount.UserIdentityName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShoppingCartId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShoppingCartId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<div>
+    @Html.ActionLink("Back to Admin", "Index", "Admin")
+</div>

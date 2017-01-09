@@ -1,0 +1,3 @@
+Ninject IOC Container For N-Tier MVC pattern used here:
+
+https://www.jamietech.com/2015/11/19/using-ninject-mvc-in-a-n-tier-application/

@@ -1,0 +1,42 @@
+﻿@model Go2MusicStore.Models.PurchaseOrder
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PurchaseOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StoreAccountId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StoreAccountId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalOrderAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalOrderAmount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PurchaseOrderId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

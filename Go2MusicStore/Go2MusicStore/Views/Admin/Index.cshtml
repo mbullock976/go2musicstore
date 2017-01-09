@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Admin</h2>
+
+<div>
+    <ul>
+        <li>@Html.ActionLink("Genres", "Index", "Genres")</li>
+        <li>@Html.ActionLink("Artists", "Index", "Artists")</li>
+        <li>@Html.ActionLink("Albums", "Index", "Albums")</li>
+        <li>@Html.ActionLink("Reviews", "Index", "Reviews")</li>
+    </ul><br />
+    <label>Ecommerce:</label>
+    <br />
+    <ul>
+        <li>@Html.ActionLink("CreditCardTypes", "Index", "CreditCardTypes")</li>
+        <li>@Html.ActionLink("Countries", "Index", "Countries")</li>
+        <li>@Html.ActionLink("StoreAccounts", "Index", "StoreAccounts")</li>
+        <li>@Html.ActionLink("CreditCards", "Index", "CreditCards")</li>
+        <li>@Html.ActionLink("ShoppingCarts", "Index", "ShoppingCarts")</li>
+        <li>@Html.ActionLink("ShoppingCartItems", "Index", "ShoppingCartItems")</li>
+        <li>@Html.ActionLink("PurchaseOrders", "Index", "PurchaseOrders")</li>
+        <li>@Html.ActionLink("PurchaseOrderItems", "Index", "PurchaseOrderItems")</li>
+    </ul>
+</div>
