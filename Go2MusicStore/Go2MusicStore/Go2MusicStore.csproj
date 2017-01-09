@@ -257,9 +257,12 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\foolsgold.jpg" />
     <Content Include="Content\Images\home-showcase.png" />
     <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\Nevermind.jpg" />
     <Content Include="Content\Images\placeholder.gif" />
+    <Content Include="Content\Images\waterfall.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
