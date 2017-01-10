@@ -21,8 +21,10 @@
                 <li data-ng-repeat="i in albumService.genreAlbumsList | orderBy: selectedSortOrder">
                     <table>
                         <tr>
-                            <th>
-                                <img alt="/Content/Images/placeholder.gif" src={{i.albumArtUrl}} />
+                            <th>                                
+                                <a ui-sref="album({albumId: i.albumId})">
+                                    <img alt="/Content/Images/placeholder.gif" src={{i.albumArtUrl}} />
+                                </a>
                             </th>
                         </tr>
                         <tr>

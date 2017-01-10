@@ -27,7 +27,9 @@
                         <table>
                             <tr>
                                 <th>
-                                    <img alt="/Content/Images/placeholder.gif" src={{i.albumArtUrl}} />
+                                    <a ui-sref="album({albumId: i.albumId})">
+                                        <img alt="/Content/Images/placeholder.gif" src={{i.albumArtUrl}} />
+                                    </a>
                                 </th>
                             </tr>
                             <tr>
