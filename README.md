@@ -14,3 +14,6 @@ SignalR is used to perform real-time updates of stock inventory upon purchases, 
 
 My intention is to also write a WPF front end album image uploader that also sits on-top of the re-usable API.
 
+Working copy can be found in the link below hosted on Azure
+
+http://go2-music-store.azurewebsites.net/#/
