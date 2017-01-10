@@ -17,3 +17,7 @@ My intention is to also write a WPF front end album image uploader that also sit
 Working copy can be found in the link below hosted on Azure
 
 http://go2-music-store.azurewebsites.net/#/
+
+Create a new Store Account or log in to an existing store account:
+Username: go2musicstore@gmail.com
+Password: Password1-
